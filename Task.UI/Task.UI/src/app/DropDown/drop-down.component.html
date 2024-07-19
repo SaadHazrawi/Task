@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- First Dropdown -->
+            <div class="mb-3">
+                <label for="firstDropdown" class="form-label">Select Categorey</label>
+                <select id="firstDropdown" class="form-select" aria-label="First select menu"
+                    (change)="onCategoryChange($event)">
+                    <option selected disabled>Open this select menu</option>
+                    @for (categorey of categories; track $index) {
+                    <option [value]="categorey.id">{{categorey.categoryName}}</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <!-- Second Dropdown -->
+            <div class="mb-3">
+                <label for="secondDropdown" class="form-label">SubCategorey</label>
+                <select id="secondDropdown" class="form-select" aria-label="Second select menu">
+                    <option selected disabled>Choose...</option>
+                    @for (subCategorey of subCategories; track $index) {
+                    <option>{{subCategorey.subCategoryName}}</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

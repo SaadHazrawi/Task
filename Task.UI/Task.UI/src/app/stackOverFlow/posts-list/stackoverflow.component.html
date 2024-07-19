@@ -1,0 +1,40 @@
+<section class="wrapper">
+    <div class="container-fostrap">
+        <div>
+            <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/>
+            <h1 class="heading">
+                Last 50 Post From Stack Over Flow
+            </h1>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    @for (item of posts; track $index) {
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="card">
+                            <a class="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                            <img src="{{item.owner.profile_image}}" />
+                          </a>
+                            <div class="card-content">
+                                <h4 class="card-title">
+                                    <a href="{{item.owner.link}}"> {{item.owner.display_name}}
+                                  </a>
+                                </h4>
+                               
+                                <p class="">
+                                    {{item.title}}
+                                </p>
+                            </div>
+                            <div class="card-read-more">
+                                <a (click)="ShowDetilePosts(item)" target="_blank" class="btn btn-link btn-block">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
